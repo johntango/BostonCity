@@ -1,7 +1,6 @@
 # get Boston City data from S3 https://pollysnips.s3.amazonaws.com/bostonEmployeeSalaries.json
 import pandas as pd
 import json
-import pandas as pd
 
 
 def get_data():
@@ -12,5 +11,17 @@ def get_data():
 
 
 data = get_data()
-salaries = pd.DataFrame(data["data"])
+df = pd.DataFrame(data["data"])
+print(df.head())
+print(df.shape)
+# get salries from column 18
+salaries = df[18]
 print(salaries.head())
+test = salaries.head()
+# plot histogram of salaries for all employees column 18
+test.plot.hist()
+# print(salaries.describe())
+# print(salaries.info())
+# print(salaries.columns)
+print("END")
+# plot histogram of salaries for all employees column 18
